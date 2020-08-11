@@ -38,7 +38,7 @@ belongs_to :user
 has_one :buy
 
 
-## buy テーブル
+## buys テーブル
 
 | Column        | Type   | Options                              |
 | ------        | ----   | -----------------------------------  |
@@ -52,7 +52,7 @@ belongs_to :item
 has_one :shipping_address
 
 
-## shipping_address テーブル
+## shipping_addresses テーブル
 | Column        | Type   | Options                           |
 | --------------| ----   | -------------------------------   |
 | buy           | references | null: false foreign_key: true |
