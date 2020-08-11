@@ -26,15 +26,16 @@ has_many :buys
 | user                       | references | null: false foreign_key: true|
 | name                       | string  | null: false |
 | burden                     | integer | null: false |
-| shipping_origin : string   | integer | null: false |
+| fee                        | integer | null: false |
+| days                       | integer | null: false |
+| shipping_origin            | integer | null: false |
 | category                   | integer | null: false |
 | status                     | integer | null: false |
 
 ### Association
 belongs_to :user
 has_one :buy
-belongs_to_active_hash :fee
-belongs_to_active_hash :days
+
 
 ## buy テーブル
 
@@ -52,13 +53,14 @@ has_one :shipping_address
 
 ## shipping_address テーブル
 | Column        | Type   | Options                           |
-| buy          | references | null: false foreign_key: true |
-| postal_code   | string | null: false |
-| city          | string | null: false |
-| address       | string | null: false |
-| building_name | string |             |
-| tel           | string | null: false |
+| --------------| ----   | -------------------------------   |
+| buy           | references | null: false foreign_key: true |
+| prefecture    | integer | null: false |
+| postal_code   | string  | null: false |
+| city          | string  | null: false |
+| address       | string  | null: false |
+| building_name | string  |             |
+| tel           | string  | null: false |
 
 ### Association
 belongs_to :buy
-belongs_to_active_hash :prefecture
