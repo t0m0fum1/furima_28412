@@ -9,13 +9,14 @@
 | password  | string | null: false |
 | firstname | string | null: false |
 | lastname  | string | null: false |
-| birthday  | string | null: false |
+| firstname_furigana  | string | null: false |
+| lastname_furigana   | string | null: false |
+| birthday  | date    | null: false |
 
 
 ### Association
 has_many :items
 has_many :buys
-has_one :shipping_address
 
 
  ## items テーブル
@@ -23,10 +24,7 @@ has_one :shipping_address
 | Column                     | Type   | Options                          |
 | -------------------------  | ----   | -------------------------------- |
 | user                       | references | null: false foreign_key: true|
-| item_name                  | string  | null: false |
-| image                      | string  | null: false |
-| fee                        | string  | null: false |
-| days                       | string  | null: false |
+| name                       | string  | null: false |
 | burden                     | integer | null: false |
 | shipping_origin : string   | integer | null: false |
 | category                   | integer | null: false |
@@ -42,6 +40,7 @@ has_one :buy
 | Column        | Type   | Options                              |
 | ------        | ----   | -----------------------------------  |
 | user          | references | null: false foreign_key: true |
+| item          | references | null: false foreign_key: true |
 
 
 ### Association
@@ -52,10 +51,13 @@ belongs_to :shipping_address
 
 ## shipping_address テーブル
 | Column        | Type   | Options                           |
-| user          | references | null: false foreign_key: true |
+| buy          | references | null: false foreign_key: true |
+| postal_code   | string | null: false |
+| prefectures   | string | null: false |
+| city          | string | null: false |
 | address       | string | null: false |
+| building_name | string | null: false |
 | tel           | string | null: false |
 
 ### Association
-belongs_to :user
 belongs_to :shipping_address
