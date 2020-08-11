@@ -25,8 +25,6 @@ has_many :buys
 | -------------------------  | ----   | -------------------------------- |
 | user                       | references | null: false foreign_key: true|
 | name                       | string  | null: false |
-| fee                       | string  | null: false |
-| days                       | string  | null: false |
 | burden                     | integer | null: false |
 | shipping_origin : string   | integer | null: false |
 | category                   | integer | null: false |
@@ -35,7 +33,8 @@ has_many :buys
 ### Association
 belongs_to :user
 has_one :buy
-
+belongs_to_active_hash :fee
+belongs_to_active_hash :days
 
 ## buy テーブル
 
@@ -48,7 +47,7 @@ has_one :buy
 ### Association
 belongs_to :user
 belongs_to :item
-belongs_to :shipping_address
+has_one :shipping_address
 
 
 ## shipping_address テーブル
@@ -57,8 +56,9 @@ belongs_to :shipping_address
 | postal_code   | string | null: false |
 | city          | string | null: false |
 | address       | string | null: false |
-| building_name | string | null: false |
+| building_name | string |             |
 | tel           | string | null: false |
 
 ### Association
-belongs_to :shipping_address
+belongs_to :buy
+belongs_to_active_hash :prefecture
