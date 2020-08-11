@@ -31,6 +31,7 @@ has_many :buys
 | shipping_origin            | integer | null: false |
 | category                   | integer | null: false |
 | status                     | integer | null: false |
+| explain                    | text    | null: false |
 
 ### Association
 belongs_to :user
