@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     
@@ -15,6 +16,5 @@ class ItemsController < ApplicationController
   def show
   
   end
-
 
 end
