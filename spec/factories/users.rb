@@ -10,6 +10,6 @@ FactoryBot.define do
     lastname {gimei.last.kanji}
     firstname_furigana {gimei.first.katakana}
     lastname_furigana {gimei.last.katakana}
-
+    birthday {Faker::Date.in_date_period}
   end
 end
