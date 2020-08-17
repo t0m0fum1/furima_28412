@@ -12,7 +12,7 @@ class User < ApplicationRecord
     existence.validates :firstname, format: { with: /\A[一-龥]+\z/ }
     existence.validates :lastname, format: { with: /\A[一-龥]+\z/ }
   end
-  
+
   with_options presence: true do |existence|
     existence.validates :firstname_furigana, format: { with: /\A[ァ-ヶー－]+\z/ }
     existence.validates :lastname_furigana, format: { with: /\A[ァ-ヶー－]+\z/ }
