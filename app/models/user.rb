@@ -17,4 +17,7 @@ class User < ApplicationRecord
     existence.validates :firstname_furigana, format: { with: /\A[ァ-ヶー－]+\z/ }
     existence.validates :lastname_furigana, format: { with: /\A[ァ-ヶー－]+\z/ }
   end
+
+  has_many :items
+
 end
