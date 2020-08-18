@@ -11,4 +11,7 @@ class Item < ApplicationRecord
   validates :burden_id, numericality: { other_than: 1 }
   validates :shipping_origin_id, numericality: { other_than: 1 }
   validates :days_id, numericality: { other_than: 1 }
+
+  validates :fee, digits_between:300,9999999
+
 end
