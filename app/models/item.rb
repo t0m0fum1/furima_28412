@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :category, :status, :burden, :shipping_origin, :days
   belongs_to :user
   
-  validates :name, :explain, :category, :status, :burden, :shipping_origin, :days, presence: true
+  validates :name, :explain, :category, :status, :burden, :shipping_origin, :days, :fee, presence: true
 
   validates :category_id, numericality: { other_than: 1 }
   validates :status_id, numericality: { other_than: 1 }
