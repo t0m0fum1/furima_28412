@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category, :status, :burden, :shipping_origin, :days
   belongs_to :user
+  has_one_attached :image
   
   validates :name, :explain, :category, :status, :burden, :shipping_origin, :days, :fee, presence: true
 
