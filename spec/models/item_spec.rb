@@ -58,6 +58,12 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Day must be other than 1')
       end
+      it 'feeが空なら登録できない' do
+        @item.fee = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Fee can't be blank")
+      end
+
       it 'feeが300未満なら出品できない' do
         @item.fee = '200'
         @item.valid?

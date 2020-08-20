@@ -12,9 +12,5 @@ FactoryBot.define do
     association :user
 
     after(:build) { |item| item.image.attach(io: File.open(Rails.root.join('public', 'images', 'camera.png')), filename: 'camera.png', content_type: 'image/png') }
-
-    # trait :with_image do
-    #   after(:build) { |item| item.image.attach(io: File.open(Rails.root.join('public', 'images', 'camera.png')), filename: 'camera.png', content_type: 'image/png') }
-    # end
   end
 end
