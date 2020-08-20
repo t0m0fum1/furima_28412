@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
-  
+
   validates :name, :explain, :category, :status, :burden, :shipping_origin, :day, :fee, :image, presence: true
 
   validates :category_id, numericality: { other_than: 1 }
@@ -18,6 +18,5 @@ class Item < ApplicationRecord
   validates :day_id, numericality: { other_than: 1 }
 
   validates :fee, numericality: { greater_than_or_equal_to: 300 }
-  validates :fee, numericality: { less_than_or_equal_to: 9999999 }
-
+  validates :fee, numericality: { less_than_or_equal_to: 9_999_999 }
 end
