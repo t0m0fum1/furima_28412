@@ -31,7 +31,7 @@
     <% end %>
 
     <% if @item %>
-    <%= link_to '購入画面に進む', "/buys/new" ,class:"item-red-btn"%>
+    <%= link_to '購入画面に進む', " /items/#{@item.id}/buys/new" ,class:"item-red-btn"%>
     <% end %>
     
 
