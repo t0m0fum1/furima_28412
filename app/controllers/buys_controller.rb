@@ -8,5 +8,4 @@ class BuysController < ApplicationController
     
   end
   
-  end
 end
