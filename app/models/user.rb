@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  has_many :items
+  has_many :buys
 
   validates_format_of :password, with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :name, presence: true, length: { maximum: 40 }
@@ -18,5 +21,4 @@ class User < ApplicationRecord
     existence.validates :lastname_furigana, format: { with: /\A[ァ-ヶー－]+\z/ }
   end
 
-  has_many :items
 end
