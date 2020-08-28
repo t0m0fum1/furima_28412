@@ -5,6 +5,11 @@ class BuysController < ApplicationController
     if user_signed_in? && current_user.id == @item.user_id
       redirect_to root_path
     end 
+    
+    if Buy.exists?(item_id: "#{@item.id}")
+      redirect_to root_path
+    end
+
   end
 
   def create
