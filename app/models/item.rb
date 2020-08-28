@@ -8,8 +8,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
-  has_many :buys
-
+  has_one :buy
   validates :name, :explain, :category, :status, :burden, :shipping_origin, :day, :fee, :image, presence: true
 
   with_options numericality: { other_than: 1 } do |number|
@@ -22,4 +21,6 @@ class Item < ApplicationRecord
 
   validates :fee, numericality: { greater_than_or_equal_to: 300 }
   validates :fee, numericality: { less_than_or_equal_to: 9_999_999 }
+
+  
 end

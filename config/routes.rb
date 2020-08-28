@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :items do
     resources :buys, only: [:new, :create]
   end
+  resources :shipping_address, only: :create
 end
