@@ -1,9 +1,9 @@
 class UserBuy
   
   include ActiveModel::Model
+
   attr_accessor :prefecture_id, :postal_code, :city, :address, :building_name, :tel, :item_id, :token,:user_id
 
-  # shippingAdressのバリデーション
   validates :prefecture_id, :postal_code, :city, :address, :tel, presence: true
   validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/}, length: {maximum: 8}
   validates :prefecture_id, numericality: { other_than: 1 }
