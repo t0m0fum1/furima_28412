@@ -7,5 +7,5 @@ window.addEventListener('load',function(){
     let priceProfit = price - priceFee;
     document.getElementById('add-tax-price').innerText = priceFee;
     document.getElementById('profit').innerText = priceProfit;
-  })  
-})
+  });  
+});

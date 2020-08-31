@@ -27,7 +27,7 @@ has_many :buys
 | name                       | string  | null: false |
 | burden                     | integer | null: false |
 | fee                        | integer | null: false |
-| days                       | integer | null: false |
+| day                        | integer | null: false |
 | shipping_origin            | integer | null: false |
 | category                   | integer | null: false |
 | status                     | integer | null: false |
@@ -36,7 +36,7 @@ has_many :buys
 
 ### Association
 belongs_to :user
-has_one :buy
+has_many :buys
 
 
 ## buys テーブル

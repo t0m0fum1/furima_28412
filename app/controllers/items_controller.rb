@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   before_action :set_item, only: [:edit, :show, :destroy]
 
   def index
@@ -29,19 +28,17 @@ class ItemsController < ApplicationController
 
   def edit
   end
-  
+
   def show
   end
-  
+
   private
-  
+
   def item_params
     params.require(:item).permit(:image, :category_id, :status_id, :burden_id, :shipping_origin_id, :day_id, :fee, :name, :explain).merge(user_id: current_user.id)
   end
-  
+
   def set_item
     @item = Item.find(params[:id])
   end
-
-
 end
