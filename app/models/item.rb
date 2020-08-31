@@ -21,6 +21,4 @@ class Item < ApplicationRecord
 
   validates :fee, numericality: { greater_than_or_equal_to: 300 }
   validates :fee, numericality: { less_than_or_equal_to: 9_999_999 }
-
-  
 end

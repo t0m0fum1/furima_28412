@@ -1,7 +1,6 @@
 class ShippingAddress < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-  
-  belongs_to :buy
 
+  belongs_to :buy
 end
