@@ -6,7 +6,7 @@ class UserBuy
   POSTAL_CODE_REGEX = /\A[0-9]{3}-[0-9]{4}\z/.freeze
   TEL_REGEX = /\A[0-9]{11}/.freeze
 
-  validates :prefecture_id, :postal_code, :city, :address, :tel, presence: true
+  validates :prefecture_id, :postal_code, :city, :address, :tel, :token, presence: true
   validates :postal_code, format: { with: POSTAL_CODE_REGEX }, length: { maximum: 8 }
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :tel, format: { with: TEL_REGEX }, length: { maximum: 11 }
